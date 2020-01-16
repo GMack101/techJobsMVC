@@ -33,4 +33,26 @@
     <h3>@ViewBag.jobs.Count Result(s)</h3>
 
     // TODO #2 - Loop over jobs dictionary and display all job fields 
+   
+
+  <Table  class = "job-listing">
+        @foreach (Dictionary<string, string> jobs in ViewBag.jobs)
+        {
+            @foreach (KeyValuePair<string, string> kvp in jobs)
+            {
+                <tr>
+                    <td>@kvp.Key : @kvp.Value </td>
+                </tr>
+                 
+            }
+            <tr>
+                <td><br></td>
+            </tr>
+        }
+    </Table> 
+
+
 }
+
+
+       

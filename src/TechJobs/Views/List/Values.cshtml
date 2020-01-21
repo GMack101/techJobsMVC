@@ -1,17 +1,11 @@
 ﻿<h1>@ViewBag.title</h1>
 
-<Table class="job-listing">
-    @foreach (Dictionary<string, string> jobs in ViewBag.jobs)
+<table>
+    @for (int i = 0; i < ViewBag.items.Count; i++)
     {
-        @foreach (KeyValuePair<string, string> kvp in jobs)
-        {
-            <tr>
-                <td>@kvp.Key : @kvp.Value </td>
-            </tr>
-
-        }
-        <tr>
-            <td><br></td>
+        <tr class="@( i % 2 == 0 ? "even" : "odd" ) ">
+            <td><a asp-controller="List" asp-action="Jobs" asp-route-column="@ViewBag.column" asp-route-value="@ViewBag.items[i]">@ViewBag.items[i]</a></td>
         </tr>
+
     }
-</Table>
+</table>

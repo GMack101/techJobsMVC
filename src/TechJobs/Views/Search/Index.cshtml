@@ -11,7 +11,7 @@
                        name="searchType"
                        id="@column.Key"
                        value="@column.Key" 
-                       checked="@column.Key == 'all''"/>
+                       checked="@column.Key == 'all'"/>
                 <label for="@column.Key">@column.Value</label>
             </span>
         }
@@ -35,9 +35,10 @@
     // TODO #2 - Loop over jobs dictionary and display all job fields 
    
 
-  <Table  class = "job-listing">
+  
         @foreach (Dictionary<string, string> jobs in ViewBag.jobs)
         {
+          <Table class = "job-listing">
             @foreach (KeyValuePair<string, string> kvp in jobs)
             {
                 <tr>
@@ -47,9 +48,11 @@
             }
             <tr>
                 <td><br></td>
+           
             </tr>
+           </Table>
         }
-    </Table> 
+            
 
 
 }
